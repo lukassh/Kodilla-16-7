@@ -1,70 +1,157 @@
-body {margin: 0;}
-* {box-sizing: border-box;}
+body {
+  background-image: url('https://images.unsplash.com/photo-1489486501123-5c1af10d0be6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
-.ui-sortable {
-  min-height: 80px;
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0px auto;
+  
 }
-.btn-delete {
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 22px;
-  height: 22px;
-  border: 0;
-  background-color: rgba(0,0,0,0.4);
-  color: white;
-}
-/* BOARD */
-.board h1 {
-  margin-left: 8px;
-}
-.column-container {
+
+.board {
+  margin-top: 5%;
+  background: rgba(236, 240, 241, .9);
+  min-height: 70vh;
+  height: 100%;
+  border-radius: 5px;
+  padding: 20px;
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-}
-
-
-/* COLUMN */
-.column {
-  order: 1;
-  min-width: 300px;
-  min-height: 50vh;
-  background-color: lightgrey;
-  margin-left: 8px;
-  list-style: none;
+  flex-direction: column;
   position: relative;
-}
-.column-add-card {
-  cursor: pointer;
-  text-decoration: underline;
-  margin: 5px 8px;
-  display: block;
-}
+  
+  header {
+    border-radius: 5px;
+    border: 2px solid #22a6b3;
+    text-align: center;
+    h1 {
+    font-family: 'Montserrat';
+    font-size: 30px;
+    letter-spacing: 5px;
+    font-weight: 300;
+    color: #22a6b3;
+    }
+  }
+  
+  .column-container {
+    
+    margin-top: 30px;
+    height: 100%;
+    .column {
+      margin: 20px;
+      float: left;
+      width: 300px;
+      min-height: 200px;
+      height: 100%;
+      background: #ff7979;
+      border-radius: 5px;
+      padding: 20px;
+      position: relative;
 
-/* STYLE KARTY */
-.card {
-  box-sizing: border-box;
-  display: block;
-  height: 60px;
-  margin-bottom: 5px;
-  padding: 4px;
-  overflow: hidden;
-  position: relative;
-}
-.card-list {
-  list-style: none;
-  margin: 5px;
-  padding: 0px;
-}
-.card-description {
-  margin: 2px 0;
-}
-.card-placeholder {
-  box-sizing: border-box;
-  display: block;
-  height: 60px;
-  margin-bottom: 5px;
-  border: 2px solid lightgrey;
-  background-color: lightblue;
+      .column-title {
+        font-size: 20px;
+        color: #fff;
+        text-transform: uppercase;
+        font-weight: 500;
+        font-family: 'Pacifico', cursive;
+      }
+      .btn-delete {
+        background: transparent;
+        border-radius: 50%;
+        font-size: 18px;
+        border: none;
+        position: absolute;
+        top: 2px;
+        right: 2px;
+        color: #fff;
+      }
+
+
+      .add-card {
+        
+        background: transparent;
+        border: none;
+        color: #fff;
+        font-size: 14px;
+        letter-spacing: 2px;
+        position: absolute;
+        bottom: 20px;
+        &:hover {
+          border: 1px solid rgb(236, 240, 241);
+          border-radius: 3px;
+        }
+      }
+
+      ul  {
+        list-style: none;
+        min-height: 200px;
+        height: auto;
+        width: 100%;
+        li {
+          min-height: 40px;
+        }
+        li:nth-child(even) {
+          transform: rotate(3deg);
+        };
+        li:nth-child(odd) {
+          transform: rotate(-2deg);
+        }
+      }
+
+
+      .card {
+        width: 70%;
+        min-height: 150px;
+        background-color: #DBD6B0;
+        box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+        padding: 20px;
+        margin: 20px 0;
+        font-family: 'Satisfy', cursive;
+        font-size: 20px;
+        letter-spacing: 5px;
+        position: relative;
+        .btn-delete {
+          font-size: 26px;
+          font-family: 'Satisfy', cursive;
+          color: #000;
+        }
+      } 
+    }
+    
+
+    .klasaDone {
+    
+      background: #6ab04c;
+      .card {
+        background: #badc58;
+      }
+    }
+    .klasaDoing {
+      background: #22a6b3;
+      .card {
+        background: #7ed6df;
+      }
+    }
+  }
+
+  .create-column {
+    
+          padding: 10px;
+          border-radius: 5px;
+          background: #22a6b3;
+          color: #fff;
+          position: absolute;
+          bottom: 30px;
+          left: 40px;
+          border: none;
+          transition: ease 1s;
+  }
+
+  .create-column:hover {
+          background: #ff7979;
+          cursor: pointer;
+  }
+    
 }

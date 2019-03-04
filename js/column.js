@@ -34,8 +34,7 @@ function Column(id, name) {
 		    .then(function() {
 		     	var card = new Card(resp.id, cardName);
     			self.addCard(card);
-    			//create a new client side card
-		    });
+    		});
 
 		  self.addCard(new Card(cardName));
 		}
