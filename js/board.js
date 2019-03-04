@@ -1,4 +1,5 @@
 var baseUrl = 'https://kodilla.com/pl/bootcamp-api';
+var prefix = "https://cors-anywhere.herokuapp.com/";
 var myHeaders = {
   'X-Client-Id': '3878',
   'X-Auth-Token': 'a0b90e630fd1303a299243445e158e1c'
@@ -19,7 +20,7 @@ document.querySelector('#board .create-column').addEventListener('click', functi
 
   data.append('name', name);
 
-  fetch(baseUrl + '/column', {
+  fetch(prefix + baseUrl + '/column', {
       method: 'POST',
       headers: myHeaders,
       body: data,

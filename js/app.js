@@ -1,10 +1,11 @@
 var baseUrl = 'https://kodilla.com/pl/bootcamp-api';
+var prefix = "https://cors-anywhere.herokuapp.com/";
 var myHeaders = {
   'X-Client-Id': '3878',
   'X-Auth-Token': 'a0b90e630fd1303a299243445e158e1c'
 };
 
-fetch(baseUrl + '/board', { headers: myHeaders })
+fetch(prefix + baseUrl + '/board', { headers: myHeaders })
   .then(function(resp) {
     return resp.json();
   })

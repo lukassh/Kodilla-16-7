@@ -1,4 +1,5 @@
 var baseUrl = 'https://kodilla.com/pl/bootcamp-api';
+var prefix = "https://cors-anywhere.herokuapp.com/";
 var myHeaders = {
   'X-Client-Id': '3878',
   'X-Auth-Token': 'a0b90e630fd1303a299243445e158e1c'
@@ -22,7 +23,7 @@ function Column(id, name) {
 		   data.append('name', cardName);
 		   data.append('bootcamp_kanban_column_id', self.id);
 		  
-		  fetch(baseUrl + '/card', {
+		  fetch(prefix + baseUrl + '/card', {
 		      method: 'POST',
 		      headers: myHeaders,
    			  body: data,
@@ -48,7 +49,7 @@ Column.prototype = {
 	},
 	removeColumn: function() {
 	    var self = this;
-		fetch(baseUrl + '/column/' + self.id, { method: 'DELETE', headers: myHeaders })
+		fetch(prefix + baseUrl + '/column/' + self.id, { method: 'DELETE', headers: myHeaders })
 		   .then(function(resp) {
 		      return resp.json();
 		   })
