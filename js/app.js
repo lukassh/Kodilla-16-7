@@ -34,7 +34,6 @@ function setupCards(col, cards) {
 function generateTemplate(name, data, basicElement) {
   	var template = document.getElementById(name).innerHTML;
   	var element = document.createElement(basicElement || 'div');
-  
   	Mustache.parse(template);
   	element.innerHTML = Mustache.render(template, data);
   
